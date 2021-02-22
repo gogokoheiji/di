@@ -1,0 +1,27 @@
+<html>
+  <head>
+    <title>Enterキーが押されたら次の項目に進む</title>
+    <script language="JavaScript">
+      <!--
+      currentFNo = 0
+      function nextForm() {
+        if (event.keyCode == 13) {
+          currentFNo++
+          currentFNo %= document.myFORM.elements.length
+          document.myFORM[currentFNo].focus()
+        }
+      }
+      window.document.onkeydown = nextForm
+      // -->
+    </script>
+  </head>
+  <body>
+    <form name="myFORM">
+      <input type="text" />
+      <input type="text" /><br />
+      <input type="text" /><br />
+      <input type="text" /><br />
+      <input type="text" /><br />
+    </form>
+  </body>
+</html>

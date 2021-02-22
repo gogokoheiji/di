@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <tbody>
+      <tr>
+        <td class="text-center"><input type="checkbox" class="list-check" /></td>
+        <td class="text-right">00001</td>
+        <td><input type="text" name="name" class="form-control" placeholder="name" /></td>
+        <td><input type="text" name="birth" class="form-control" placeholder="birth" /></td>
+        <td><input type="text" name="email" class="form-control" placeholder="email" /></td>
+        <td><button type="button" class="btn btn-sm btn-default">Action</button></td>
+      </tr>
+      <tr>
+        <td class="text-center"><input type="checkbox" class="list-check" /></td>
+        <td class="text-right">00002</td>
+        <td><input type="text" name="name" class="form-control" placeholder="name" /></td>
+        <td><input type="text" name="birth" class="form-control" placeholder="birth" /></td>
+        <td><input type="text" name="email" class="form-control" placeholder="email" /></td>
+        <td><button type="button" class="btn btn-sm btn-default">Action</button></td>
+      </tr>
+      <tr>
+        <td class="text-center"><input type="checkbox" class="list-check" /></td>
+        <td class="text-right">00003</td>
+        <td><input type="text" name="name" class="form-control" placeholder="name" /></td>
+        <td><input type="text" name="birth" class="form-control" placeholder="birth" /></td>
+        <td><input type="text" name="email" class="form-control" placeholder="email" /></td>
+        <td><button type="button" class="btn btn-sm btn-default">Action</button></td>
+      </tr>
+      <tr>
+        <td class="text-center"><input type="checkbox" class="list-check" /></td>
+        <td class="text-right">00004</td>
+        <td><input type="text" name="name" class="form-control" placeholder="name" /></td>
+        <td><input type="text" name="birth" class="form-control" placeholder="birth" /></td>
+        <td><input type="text" name="email" class="form-control" placeholder="email" /></td>
+        <td><button type="button" class="btn btn-sm btn-default">Action</button></td>
+      </tr>
+    </tbody>
+    <script src="https://code.jquery.com/jquery-1.12.4.js" integrity="sha256-Qw82+bXyGq6MydymqBxNPYTaUXXq7c8v3CwiYwLLNXU=" crossorigin="anonymous"></script>
+    <script src="javascript">
+      $('TR').on('keydown', 'INPUT', function (event) {
+        var $this = $(this)
+        var targetName = $this.attr('name')
+        var $inputs = $('input[name="' + targetName + '"]')
+        var seq = $inputs.index($this)
+
+        if (event.keyCode == 38) {
+          // up
+          $inputs.eq(seq - 1).focus()
+        } else if (event.keyCode == 40) {
+          // down
+          if (seq == $inputs.length - 1) {
+            seq = -1
+          }
+          $inputs.eq(seq + 1).focus()
+        }
+
+        return
+      })
+    </script>
+  </body>
+</html>
